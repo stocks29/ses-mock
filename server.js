@@ -32,7 +32,7 @@ app.use(function (req, res) {
       Source: req.body.Source,
       Destination: req.body['Destination.ToAddresses.member.1'],
       Subject: req.body['Message.Subject.Data'],
-      HtmlSize: req.body['Message.Body.Html.Data'].length,
+      HtmlSize: (req.body['Message.Body.Html.Data'] && req.body['Message.Body.Html.Data'].length) || 0,
       TextSize: req.body['Message.Body.Text.Data'].length
     });
 
